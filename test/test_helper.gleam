@@ -1,12 +1,11 @@
-import gleam/int
 import gleam/result
 import gleam/string
 import simplifile
 
-pub fn get_input_lines(day: Int, example: Bool) -> List(String) {
+pub fn get_input_lines(day: String, example: Bool) -> List(String) {
   let filepath =
-    "input/day"
-    <> int.to_string(day)
+    "input/"
+    <> day
     <> case example {
       True -> ".example.txt"
       False -> ".txt"
