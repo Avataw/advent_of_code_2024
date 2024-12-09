@@ -46,3 +46,7 @@ pub fn on_line(a: Position, b: Position, c: Position) -> Bool {
 
   m1 == m2
 }
+
+pub fn is_equal(a: Position, b: Position) -> Bool {
+  a.x == b.x && a.y == b.y
+}
