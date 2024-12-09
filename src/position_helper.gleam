@@ -1,3 +1,5 @@
+import gleam/int
+
 pub type Position {
   Position(x: Int, y: Int)
 }
@@ -32,4 +34,15 @@ pub fn up_right(position: Position) {
 
 pub fn up_left(position: Position) {
   position |> up |> left
+}
+
+pub fn distance(a: Position, b: Position) -> Int {
+  int.absolute_value(a.x - b.x) + int.absolute_value(a.y - b.y)
+}
+
+pub fn on_line(a: Position, b: Position, c: Position) -> Bool {
+  let m1 = int.multiply(a.y - b.y, a.x - c.x)
+  let m2 = int.multiply(a.y - c.y, a.x - b.x)
+
+  m1 == m2
 }
