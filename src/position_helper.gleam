@@ -36,6 +36,10 @@ pub fn up_left(position: Position) {
   position |> up |> left
 }
 
+pub fn adjacent(position: Position) {
+  [up(position), right(position), down(position), left(position)]
+}
+
 pub fn distance(a: Position, b: Position) -> Int {
   int.absolute_value(a.x - b.x) + int.absolute_value(a.y - b.y)
 }
