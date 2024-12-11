@@ -11,7 +11,13 @@ pub fn get_input_lines(day: String, example: Bool) -> List(String) {
       False -> ".txt"
     }
 
-  simplifile.read(filepath)
-  |> result.unwrap("")
-  |> string.split("\n")
+  let input =
+    simplifile.read(filepath)
+    |> result.unwrap("")
+    |> string.split("\n")
+
+  case input {
+    [] -> panic as "The input file should never be empty!"
+    _ -> input
+  }
 }
