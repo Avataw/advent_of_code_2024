@@ -1,7 +1,6 @@
 import gleeunit/should
 import position_helper.{Position}
 
-// #(Position(4, 3), Position(8, 4), Position(2, 0))
 pub fn on_line_diagonal_test() {
   let #(diagonal_first, diagonal_second, diagonal_third) = #(
     Position(0, 0),
