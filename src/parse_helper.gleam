@@ -2,6 +2,7 @@ import gleam/dict
 import gleam/int
 import gleam/list
 import gleam/pair
+import gleam/regexp
 import gleam/string
 import position_helper
 
@@ -21,6 +22,15 @@ pub fn to_int_pair(line: List(String)) {
     [a, b] -> pair.new(a, b)
     [] | [_] | _ -> panic as "Parsing Error"
   }
+}
+
+pub fn parse_numbers(input: String) {
+  let numbers = case regexp.from_string("-?\\d+") {
+    Error(_) -> panic as "This is an invalid regex"
+    Ok(regexp) -> regexp
+  }
+  regexp.scan(numbers, input)
+  |> list.map(fn(match) { match.content |> to_int })
 }
 
 pub fn parse_grid(input: List(String)) {

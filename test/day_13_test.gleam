@@ -14,12 +14,6 @@ pub fn a_input_test() {
   |> should.equal(35_082)
 }
 
-// pub fn b_first_example_test() {
-//   test_helper.get_input_lines("day13", True)
-//   |> day_13.b()
-//   |> should.equal(80)
-// }
-
 pub fn b_input_test() {
   test_helper.get_input_lines("day13", False)
   |> day_13.b()
